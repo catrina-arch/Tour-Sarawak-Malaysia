@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarawak Tourism Portal</title>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script>
+        $(document).on("pageshow", function () {
+            $("[data-role='navbar']").navbar();
+        });
+    </script>
+    
+    <!-- CSS-->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- JS Kustom -->
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <!-- 1. HOME PAGE -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>Home</h1>
+        </div>
+        
+        <!-- Navigation -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active" data-icon="home" data-ajax="false">Home</a></li>
+                <li><a href="#tourPackages" data-icon="shop" data-ajax="false">Tour Packages</a></li>
+                <li><a href="#bookings" data-icon="grid" data-ajax="false">Bookings</a></li>
+                <li><a href="#contact" data-icon="phone" data-ajax="false">Contact Us!</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <h2>Welcome to Sarawak!</h2>
+            <p>Hop on to Sarawak's famous and underrated places and prepare for the unexpected fun!!</p>
+
+            <!-- Card Grid -->
+            <div class="card-grid">
+                <div class="card">
+                    <img src="image/Merarap Hot Spring, Limbang.jpg" alt="Limbang">
+                    <h3>Merarap Hot Springs, Limbang</h3>
+                    <p>One of the more underrated hot springs located in the heart of Limbang, takes you to a bath that is warm and welcoming.</p>
+                </div>
+
+                <div class="card">
+                    <img src="image/Grand Old Lady, Miri.jpg" alt="Miri 1">
+                    <h3>Grand Old Lady, Miri</h3>
+                    <p>The Grand Old Lady is one of Miri's many main places of interest and also act as an important monument.</p>
+                </div>
+
+                <div class="card">
+                    <img src="image/Giam Waterfalls, Miri.jpg" alt="Miri 2">
+                    <h3>Giam Waterfalls, Miri</h3>
+                    <p>A waterfall that is only heard by the locals of Bakam in Miri, and steps foot in mother nature.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 Sarawak Tourism</h4>
+        </div>
+    </div>
+
+
+    <!-- 2. TOUR PACKAGES PAGE -->
+    <div data-role="page" id="tourPackages">
+        <div data-role="header" data-theme="b">
+            <h1>Packages</h1>
+        </div>
+        
+        <!-- Navigation -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-ajax="false">Home</a></li>
+                <li><a href="#tourPackages" class="ui-btn-active" data-icon="shop" data-ajax="false">Tour Packages</a></li>
+                <li><a href="#bookings" data-icon="grid" data-ajax="false">Bookings</a></li>
+                <li><a href="#contact" data-icon="phone" data-ajax="false">Contact Us!</a></li>
+            </ul>
+        </div>
+
+        <!-- Product Content & Popup Links -->
+        <div role="main" class="ui-content">
+            <h2>Tour Packages Available Here!</h2>
+            <p>Click on any packages below to view more details</p>
+         <!-- Product List -->
+            <ul data-role="listview" data-inset="true" class="product-list">
+                <!-- Pakej 1 -->
+                <li>
+                    <a href="#popup-merarap" data-rel="popup" data-position-to="window" data-transition="pop" class="product-item">
+                        <img src="image/Merarap Hot Spring, Limbang.jpg" alt="Limbang">
+                        <h2 class="product-name">Merarap Hot Springs, Limbang</h2>
+                        <p class="product-description">One of the more underrated hot springs located in the heart of Limbang...</p>
+                    </a>
+                </li>
+                <!-- Pakej 2 -->
+                <li>
+                    <a href="#popup-miri1" data-rel="popup" data-position-to="window" data-transition="pop" class="product-item">
+                        <img src="image/Grand Old Lady, Miri.jpg" alt="Miri 1">
+                        <h2 class="product-name">Grand Old Lady, Miri</h2>
+                        <p class="product-description">The Grand Old Lady is one of Miri's many main places of interest...</p>
+                    </a>
+                </li>
+                <!-- Pakej 3 -->
+                <li>
+                    <a href="#popup-miri2" data-rel="popup" data-position-to="window" data-transition="pop" class="product-item">
+                        <img src="image/Giam Waterfalls, Miri.jpg" alt="Miri 2">
+                        <h2 class="product-name">Giam Waterfalls, Miri</h2>
+                        <p class="product-description">A waterfall that is only heard by the locals of Bakam in Miri...</p>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- POPUP 1: Merarap Hot Springs -->
+            <div data-role="popup" id="popup-merarap" data-theme="b" class="ui-content" style="max-width:350px;">
+                <img src="image/Merarap Hot Spring, Limbang.jpg" alt="Limbang" style="width:100%; border-radius:5px;">
+                <h3>Merarap Hot Springs, Limbang</h3>
+                <p>One of the more underrated hot springs located in the heart of Limbang, takes you to a bath that is warm and welcoming.</p>
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Close</a>
+            </div>
+
+            <!-- POPUP 2: Grand Old Lady -->
+            <div data-role="popup" id="popup-miri1" data-theme="b" class="ui-content" style="max-width:350px;">
+                <img src="image/Grand Old Lady, Miri.jpg" alt="Miri 1" style="width:100%; border-radius:5px;">
+                <h3>Grand Old Lady, Miri</h3>
+                <p>The Grand Old Lady is one of Miri's many main places of interest and also act as an important monument in the eyes of the local's and definitely, the world's.</p>
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Close</a>
+            </div>
+
+            <!-- POPUP 3: Giam Waterfalls -->
+            <div data-role="popup" id="popup-miri2" data-theme="b" class="ui-content" style="max-width:350px;">
+                <img src="image/Giam Waterfalls, Miri.jpg" alt="Miri 2" style="width:100%; border-radius:5px;">
+                <h3>Giam Waterfalls, Miri</h3>
+                <p>A waterfall that is only heard by the locals of Bakam in Miri, and steps foot in mother nature.</p>
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Close</a>
+            </div>
+
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 Sarawak Tourism</h4>
+        </div>
+    </div>
+
+
+    <!-- 3. BOOKING PAGE -->
+    <div data-role="page" id="bookings">
+        <div data-role="header" data-theme="b">
+            <a href="#tourPackages" data-icon="back" data-ajax="false">Back</a>
+         <h1>Book Your Tour</h1>
+        </div>
+        
+        <!-- Navigation -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-ajax="false">Home</a></li>
+                <li><a href="#tourPackages" data-icon="shop" data-ajax="false">Tour Packages</a></li>
+                <li><a href="#bookings" class="ui-btn-active" data-icon="grid" data-ajax="false">Bookings</a></li>
+                <li><a href="#contact" data-icon="phone" data-ajax="false">Contact Us!</a></li>
+            </ul>
+        </div>
+  
+        <!-- Booking Form -->
+        <div role="main" class="ui-content">
+            <h2>Booking Form</h2>
+            <form onsubmit="alert('Booking successful! Thank you.'); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter Your Name" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" placeholder="0197890060" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter Your Email" required>
+
+                <label for="traveldate">Travel Date</label>
+                <input type="date" id="traveldate" name="traveldate" required>
+
+                <label for="participants">Participants</label>
+                <input type="number" id="participants" name="participants" min="1" placeholder="Number of participants" required>
+
+                <label>
+                    <input type="checkbox" name="agree" value="yes" required>
+                    I agree to the booking terms and conditions.
+                </label>
+
+                <button type="submit" data-theme="b">Submit</button>
+            </form>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 Sarawak Tourism</h4>
+        </div>
+    </div>
+
+
+    <!-- 4. CONTACT PAGE -->
+    <div data-role="page" id="contact">
+        <div data-role="header" data-theme="b">
+            <h1>Contact Us</h1>
+        </div>
+
+        <!-- Navigation -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-ajax="false">Home</a></li>
+                <li><a href="#tourPackages" data-icon="shop" data-ajax="false">Tour Packages</a></li>
+                <li><a href="#bookings" data-icon="grid" data-ajax="false">Bookings</a></li>
+                <li><a href="#contact" class="ui-btn-active" data-icon="phone" data-ajax="false">Contact Us!</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Content -->
+        <div data-role="content">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you! Please fill out the form below.</p>
+
+            <form id="contactForm" onsubmit="return false;">
+                <label for="c-name">Name:</label>
+                <input type="text" name="name" id="c-name" placeholder="Your Name">
+
+                <label for="c-email">Email:</label>
+                <input type="email" name="email" id="c-email" placeholder="your@gmail.com">
+
+                <label for="c-message">Message</label>
+                <textarea name="message" id="c-message" placeholder="Type your message here..."></textarea>
+
+                <input type="submit" value="Send Message" data-theme="b">
+            </form>
+        </div>
+        
+        <div data-role="footer" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 Sarawak Tourism</h4>
+        </div>
+    </div>
+
+</body>
+</html>
